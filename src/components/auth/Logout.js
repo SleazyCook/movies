@@ -11,7 +11,7 @@ function Logout() {
     }
 
     return (
-        <button onClick={handleSignOut}>
+        <button className='user-menu__button' onClick={handleSignOut}>
             Logout
         </button>
     )
