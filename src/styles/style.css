@@ -2,3 +2,13 @@
     background-color: black;
     color: green;
 }
+
+.trending {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.trending__card span {
+    display: block;
+}
