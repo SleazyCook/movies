@@ -1,7 +1,13 @@
+import AuthDetails from "../components/auth/AuthDetails";
+
 function Header() {
     return (
         <div>
-            Welcome to my Website
+            Welcome to the Movie Website
+            <br />
+            Developed by Drewford
+
+            <AuthDetails />
         </div>
     )
 }

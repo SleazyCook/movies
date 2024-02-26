@@ -31,7 +31,8 @@ function AuthDetails() {
 
     return(
         <div>
-            {authUser ? <>{authUser.email} Signed In
+            {authUser && <img src={authUser.photoURL} height="50"></img>}
+            {authUser ? <>{authUser.displayName} Signed In
                 {/* <button onClick={handleSignOut}>Sign Out</button> */}
                 <Logout />
                 </> : <>Signed Out</>}
