@@ -14,7 +14,6 @@ function SignUp({setRegister}) {
         }).catch((error) => {
             console.log(error)
         })        
-        console.log('sign up button clicked')
     }
 
     function handleNoRegister() {

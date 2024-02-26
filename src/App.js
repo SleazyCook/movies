@@ -17,7 +17,7 @@ function App() {
         const listen = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setAuthUser(user)
-                console.log(user)
+                // console.log(user)
                 setLoggedIn(true)
             } else {
                 setAuthUser(null)

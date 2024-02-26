@@ -14,11 +14,10 @@ function SignIn({setRegister}) {
         
         .then((userCredential) => {
             navigate('/')
-            console.log(userCredential)
+            // console.log(userCredential)
         }).catch((error) => {
             console.log(error)
-        })        
-        console.log('sign in button clicked')
+        })       
     }
 
     function handleRegister() {

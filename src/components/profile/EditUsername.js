@@ -13,7 +13,7 @@ function EditUsername() {
         updateProfile(auth.currentUser, {
             displayName: username
             }).then(() => {
-                console.log('display name only, UPDATED', auth.currentUser)
+                console.log('display name updated: ', auth.currentUser)
             }).catch((error) => {
                 console.log('could not update username', error)
             });

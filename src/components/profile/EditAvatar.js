@@ -13,7 +13,7 @@ function EditAvatar() {
         updateProfile(auth.currentUser, {
             photoURL: avatarURL
             }).then(() => {
-                console.log('display name only, UPDATED', auth.currentUser)
+                console.log('avatar name updated: ', auth.currentUser)
             }).catch((error) => {
                 console.log('could not update username', error)
             });
