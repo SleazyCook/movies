@@ -1,32 +1,17 @@
 import { Link } from 'react-router-dom'
 
-import Logout from '../components/auth/Logout'
-
-function Header({loggedIn}) {
-
-    // console.log('header check for log in', loggedIn)
+function Header() {
     return (
-        <div>
-            {/* Basic Header */}
-            Welcome to the Movie Website
-            <br />
-            Developed by Drewford
+        <div className='header'>
+            <h1>
+                <Link to='/'>
+                    <span className='header__primary'>film society</span>
+                    <span className='header__secondary'>Developed by 
+                        <span className='author'> Drewford</span></span>
+                </Link>
+            </h1>
 
-            <br />
 
-            {/* Links */}
-            <Link to='/'>Home</Link> | &nbsp;
-
-            {/* Conditional Links */}
-
-            {loggedIn ?
-                <>
-                    <Link to='user'>My Profile</Link> | &nbsp;
-                    <Link to='edit'>Edit Profile</Link> | &nbsp;
-                    <Logout />
-                </> :
-                <Link to='authenticate'>Sign In</Link> 
-            }
         </div>
     )
 }

@@ -8,10 +8,8 @@ export async function fetchMovieData() {
             Authorization: `Bearer ${process.env.REACT_APP_TMDB_TOKEN}`
         }
     }
-
     fetch('https://api.themoviedb.org/3/authentication', options)
         .then(response => response.json())
-        // .then(response => console.log('response: ', response))
         .catch(err => console.error(err));
 };
 

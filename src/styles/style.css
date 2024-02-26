@@ -1,7 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&family=Yatra+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+/* Variables */
+:root {
+    /* Color - Text */
+    --text-light: white;
+    --text-dark: black;
+    /* Fonts */
+    --font-title: 'Lobster', sans-serif;
+    --font-author: 'Berkshire Swash', serif;
+}
+
+/* Base */
 * {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
     background-color: black;
     color: green;
 }
+
+/* Header */
+.header {
+    padding: 2rem 0;
+    background-image: url('https://i.imgur.com/wJi0kCO.png');
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(169, 169, 169, 0.5)), url("https://i.imgur.com/ISNekkp.png");
+    background-size: cover;
+}
+
+.header h1 {
+    font-family: var(--font-title);
+    color: var(--text-light);
+    padding-left: 2rem;
+    cursor: pointer;
+    width: fit-content;
+
+    text-shadow: black 1px 0 10px;
+}
+
+.header a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.header__primary {
+    font-size: 3.5rem;
+}
+
+.header__primary,
+.header__secondary {
+    display: block;
+}
+
+.header__secondary {
+    font-weight: normal;
+    font-size: 1.2rem;
+    font-family:'Times New Roman', Times, serif;
+    padding-left: 1rem;
+}
+
+.author {
+    font-family: var(--font-author);
+}
+
+/* Toolbar */
+.toolbar {
+    background-color: black;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    padding: 1rem 0;
+}
+
+.toolbar__button {
+    background-color: white;
+    color: var(--text-dark);
+    padding: .7rem 2rem;
+    border-radius: 100px;
+    margin: 0 .5rem;
+    cursor: pointer;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.toolbar__button:hover {
+    background-color: grey;
+    color: var(--text-light);
+}
+
+.toolbar__button:before {
+    content: '';
+    background-color: white;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 125%;
+    position: absolute;
+    transform: translateX(-100%) rotate(45deg);
+    transition: all .3s;
+}
+
+.toolbar__button:hover:before {
+    transform: translateX(100%) rotate(45deg);
+}
+
+/* Searchbar */
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search__input {
+    font-family: var(--font-title);
+    font-weight: 100;
+    background-color: darkblue;
+    color: var(--text-light);
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 100px;
+    min-width: 15rem;
+    width: 90%;
+    transition: all .2s;
+    margin-right: -2rem;
+}
+
+.search__inputer:focus-within {
+    background-color: lightblue;
+}
+
+.search__inputer::placeholder {
+    color: var(--text-light);
+    opacity: 1;
+}
+
+.search__input::ms-inputer-placeholder {
+    color: var(--text-light);
+}
+
+.search__input:focus {
+    outline: none;
+    width: 100%;
+    min-width: 17rem;
+}
+
+.search__button {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    display: flex;
+    transform: translateX(-.5rem);
+}
+
+.search__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: white;
+}
+
+/* Landing */
 
 .trending {
     display: flex;

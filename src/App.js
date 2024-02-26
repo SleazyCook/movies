@@ -7,6 +7,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import './styles/style.css'
 
 import Header from './layout/Header';
+import Toolbar from './layout/Toolbar'
 
 function App() {
 
@@ -33,6 +34,9 @@ function App() {
     return(
         <div>
             <Header 
+                loggedIn={loggedIn}/>
+
+            <Toolbar 
                 loggedIn={loggedIn}/>
 
             <Outlet context={{
