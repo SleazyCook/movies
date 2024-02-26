@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { auth } from '../../firebase'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 
+import Logout from './Logout'
+
 function AuthDetails() {
 
     const [authUser, SetAuthUser] = useState(null)
@@ -21,16 +23,17 @@ function AuthDetails() {
         }
     }, [])
 
-    function handleSignOut() {
-        signOut(auth).then(() => {
-            console.log('sign out successful.')
-        }).catch(error => console.log('sign out unsuccessful', error))
-    }    
+    // function handleSignOut() {
+    //     signOut(auth).then(() => {
+    //         console.log('sign out successful.')
+    //     }).catch(error => console.log('sign out unsuccessful', error))
+    // }    
 
     return(
         <div>
             {authUser ? <>{authUser.email} Signed In
-                <button onClick={handleSignOut}>Sign Out</button>
+                {/* <button onClick={handleSignOut}>Sign Out</button> */}
+                <Logout />
                 </> : <>Signed Out</>}
         </div>
     )
