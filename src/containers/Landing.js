@@ -6,6 +6,7 @@ import Header from '../layout/Header'
 import SignIn from '../components/auth/SignIn'
 import SignUp from '../components/auth/SignUp'
 import AuthDetails from '../components/auth/AuthDetails'
+import EditProfile from '../components/profile/EditProfile'
 import Trending from '../components/Trending'
 
 function Landing() {
@@ -29,6 +30,8 @@ function Landing() {
 
             <SignIn />
             <SignUp />
+
+            <EditProfile />
             
             <Trending 
                 trending={trending}/>
