@@ -29,10 +29,9 @@ export async function fetchTrending(){
         
         const response = await fetch('https://api.themoviedb.org/3/trending/movie/week?language=en-US', options)
             const trendingData = await response.json()
-            console.log(trendingData)
             return trendingData
 
     } catch (error) {
-        console.log('error fetching trending data', error)
+        console.log('ERROR FETCHING TRENDING MOVIES', error)
     }
 }

@@ -3,6 +3,9 @@ import { useState, useEffect } from 'react'
 import { fetchTrending } from '../api/movies'
 
 import Header from '../layout/Header'
+import SignIn from '../components/auth/SignIn'
+import SignUp from '../components/auth/SignUp'
+import AuthDetails from '../components/auth/AuthDetails'
 import Trending from '../components/Trending'
 
 function Landing() {
@@ -21,6 +24,11 @@ function Landing() {
         <div>
             
             <Header />
+
+            <AuthDetails />
+
+            <SignIn />
+            <SignUp />
             
             <Trending 
                 trending={trending}/>
