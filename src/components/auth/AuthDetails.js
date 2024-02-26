@@ -1,41 +1,38 @@
 import { useState, useEffect } from 'react'
+import { Link, useOutletContext, useNavigate } from 'react-router-dom'
 import { auth } from '../../firebase'
-import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { onAuthStateChanged } from 'firebase/auth'
 
 import Logout from './Logout'
 
 function AuthDetails() {
 
-    const [authUser, SetAuthUser] = useState(null)
+    const [authUser, setAuthUser] = useState(null)
+    // const {authenticationObj: [loggedIn, setIsLoggedIn]} = useOutletContext()
+    const navigate = useNavigate()
 
     useEffect(() => {
         const listen = onAuthStateChanged(auth, (user) => {
             if (user) {
-                SetAuthUser(user)
+                setAuthUser(user)
                 console.log(user)
+                navigate('/')
             } else {
-                SetAuthUser(null)
+                setAuthUser(null)
             }
         })
 
         return () => {
             listen()
         }
-    }, [])
-
-    // function handleSignOut() {
-    //     signOut(auth).then(() => {
-    //         console.log('sign out successful.')
-    //     }).catch(error => console.log('sign out unsuccessful', error))
-    // }    
+    }, []) 
 
     return(
         <div>
             {authUser && <img src={authUser.photoURL} height="50"></img>}
-            {authUser ? <>{authUser.displayName} Signed In
-                {/* <button onClick={handleSignOut}>Sign Out</button> */}
+            {authUser ? <>{authUser.displayName} Signed In | &nbsp;
                 <Logout />
-                </> : <>Signed Out</>}
+                </> : <Link to='authenticate'>Sign In</Link>}
         </div>
     )
 }

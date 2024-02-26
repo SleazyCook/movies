@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { auth } from '../../firebase'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 
-function SignUp() {
+function SignUp({setRegister}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -17,9 +17,12 @@ function SignUp() {
         console.log('sign up button clicked')
     }
 
+    function handleNoRegister() {
+        setRegister(false)
+    }
+
     return (
         <div className='sign-in-container'>
-            Create Account
             <form onSubmit={handleSignUp}>
                 <h1>Create Account</h1>
                 <input 
@@ -39,6 +42,8 @@ function SignUp() {
                 </input>
                 <button type='submit'>Sign Up</button>
             </form>
+
+            <span onClick={handleNoRegister}>Have an account? Sign In Here</span>
         </div>
     )
 }
