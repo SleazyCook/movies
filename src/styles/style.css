@@ -11,4 +11,5 @@
 
 .trending__card span {
     display: block;
+    width: 10rem;
 }
