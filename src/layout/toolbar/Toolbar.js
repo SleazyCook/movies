@@ -5,9 +5,6 @@ import Searchbar from './Searchbar';
 import UserButton from './UserButton';
 
 function Toolbar({loggedIn, authUser}) {
-
-
-
   return(
     <div className='toolbar'>
 
@@ -16,8 +13,6 @@ function Toolbar({loggedIn, authUser}) {
 
         <Searchbar />
       </div>
-
-
 
       {loggedIn ?
             <UserButton 

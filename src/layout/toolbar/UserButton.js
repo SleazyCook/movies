@@ -16,10 +16,9 @@ function UserButton(authUser) {
 
   return (
     <div className='user-button' onClick={handleMenuVisibility}>
-      {avatar ? 
+
         <img className='user-button__icon' src={avatar} /> 
-        : 
-        <img className='user-button__icon' src='https://i.imgur.com/SGTvQJ7.png' />}
+
         &nbsp;
       
         <div className='user-button__name'>
