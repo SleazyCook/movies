@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 import { getAuth, updateProfile } from "firebase/auth";
 
-function EditUsername() {
+function EditUsername({auth}) {
     
     const [editUsername, setEditUsername] = useState('')
-    const [username, setUsername] = useState('')
+    const [username, setUsername] = useState(auth.displayName)
 
     useEffect(() => {
 
-        const auth = getAuth();
+        const auth = getAuth()
 
         updateProfile(auth.currentUser, {
             displayName: username

@@ -1,19 +1,25 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
+import { useOutletContext } from 'react-router-dom'
 import { getAuth, updateProfile } from "firebase/auth";
 
-function EditAvatar() {
+
+function EditAvatar({auth}) {
+
+    // console.log('testing edit profile ', authUser)
 
     const [editAvatarURL, setEditAvatarURL] = useState('')
-    const [avatarURL, setAvatarURL] = useState('')
+    const [avatarURL, setAvatarURL] = useState(auth.photoURL)
+
+    const auth1 = useMemo(() => getAuth(), [getAuth])
 
     useEffect(() => {
 
-        const auth = getAuth();
 
-        updateProfile(auth.currentUser, {
+
+        updateProfile(auth1.currentUser, {
             photoURL: avatarURL
             }).then(() => {
-                console.log('avatar name updated: ', auth.currentUser)
+                console.log('avatar updated: ', auth.currentUser)
             }).catch((error) => {
                 console.log('could not update username', error)
             });

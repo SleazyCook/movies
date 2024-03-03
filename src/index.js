@@ -8,7 +8,9 @@ import Landing from './containers/Landing'
 
 import LogOn from './containers/LogOn'
 import Profile from './containers/Profile'
-import EditProfile from './containers/EditProfile'
+import EditProfile from './containers/edit_profile/EditProfile'
+import Members from './containers/Members'
+import Editorials from './containers/Editorials'
 
 const appElement = document.getElementById('app')
 const root = createRoot(appElement)
@@ -34,6 +36,14 @@ export const router = createBrowserRouter([
             {
                 path: 'edit',
                 element: <EditProfile />
+            },
+            {
+                path: 'members',
+                element: <Members />
+            },
+            {
+                path: 'editorials',
+                element: <Editorials />
             }
         ]
     }

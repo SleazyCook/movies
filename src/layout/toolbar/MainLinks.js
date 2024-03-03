@@ -10,16 +10,11 @@ function MainLinks() {
     },
     {
       id: 2,
-      path: 'movies',
-      name: 'movies'
+      path: 'members',
+      name: 'members'
     },
     {
       id: 3,
-      path: 'tv',
-      name: 'tv'
-    },
-    {
-      id: 4,
       path: 'editorials',
       name: 'editorials'
     }

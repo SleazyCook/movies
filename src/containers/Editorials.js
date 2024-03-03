@@ -1,6 +1,8 @@
 function Editorials() {
   return (
-    <div></div>
+    <div>
+      Editorials Page
+    </div>
   )
 }
 
